@@ -12,9 +12,13 @@ namespace Q5
 		{
 			DateTime dt1 = new DateTime(2022, 12, 31);
 			DateTime first = new DateTime(2022, 1, 1);
-			DayOfWeek dayOfWeek1 = first.DayOfWeek;
-
-			for (DateTime dt =new DateTime(2022,1,2);dt<=dt1; dt=dt.AddDays(7))
+			DayOfWeek dayOfWeek = first.DayOfWeek;
+			int number = (int)dayOfWeek;
+			int gap = (number == 0) ? gap = 0 : gap = 7 - number; 
+			
+			DateTime firstSunday = first.AddDays(gap);
+			
+			for (DateTime dt = firstSunday; dt <= dt1; dt=dt.AddDays(7))
 			{
 				Console.WriteLine(dt);
 			}
